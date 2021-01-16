@@ -23,9 +23,7 @@ namespace FSM.Authorization.Roles
             IPermissionManager permissionManager,
             ICacheManager cacheManager,
             IUnitOfWorkManager unitOfWorkManager,
-            IRoleManagementConfig roleManagementConfig,
-            IRepository<OrganizationUnit, long> organizationUnitRepository,
-            IRepository<OrganizationUnitRole, long> organizationUnitRoleRepository)
+            IRoleManagementConfig roleManagementConfig)
             : base(
                   store,
                   roleValidators,
@@ -34,9 +32,7 @@ namespace FSM.Authorization.Roles
                   permissionManager,
                   cacheManager,
                   unitOfWorkManager,
-                  roleManagementConfig,
-                organizationUnitRepository,
-                organizationUnitRoleRepository)
+                  roleManagementConfig)
         {
         }
     }

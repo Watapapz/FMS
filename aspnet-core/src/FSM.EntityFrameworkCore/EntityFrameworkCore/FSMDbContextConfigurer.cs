@@ -7,12 +7,12 @@ namespace FSM.EntityFrameworkCore
     {
         public static void Configure(DbContextOptionsBuilder<FSMDbContext> builder, string connectionString)
         {
-            builder.UseSqlServer(connectionString);
+            builder.UseMySql(connectionString);
         }
 
         public static void Configure(DbContextOptionsBuilder<FSMDbContext> builder, DbConnection connection)
         {
-            builder.UseSqlServer(connection);
+            builder.UseMySql(connection);
         }
     }
 }

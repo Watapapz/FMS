@@ -23,7 +23,7 @@ namespace FMS
 
             Configuration.Modules.AbpAutoMapper().Configurators.Add(
                 // Scan the assembly for classes which inherit from AutoMapper.Profile
-                cfg => cfg.AddMaps(thisAssembly)
+                cfg => cfg.AddProfiles(thisAssembly)
             );
         }
     }

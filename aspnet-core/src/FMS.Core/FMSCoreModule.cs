@@ -33,6 +33,8 @@ namespace FMS
             AppRoleConfig.Configure(Configuration.Modules.Zero().RoleManagement);
 
             Configuration.Settings.Providers.Add<AppSettingProvider>();
+
+            //Configuration.Features.Providers.Add<AppFeatureProvider>();
         }
 
         public override void Initialize()

@@ -11,6 +11,9 @@
     <RootNamespace>FMS</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\FMS.Core\FMS.Core.csproj" />
   </ItemGroup>
 </Project>

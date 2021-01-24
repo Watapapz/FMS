@@ -17,6 +17,7 @@ using FMS.Identity;
 
 using Abp.AspNetCore.SignalR.Hubs;
 using Microsoft.AspNetCore.Mvc;
+using Abp.Timing;
 
 namespace FMS.Web.Host.Startup
 {
@@ -28,6 +29,7 @@ namespace FMS.Web.Host.Startup
 
         public Startup(IHostingEnvironment env)
         {
+            Clock.Provider = ClockProviders.Utc;
             _appConfiguration = env.GetAppConfiguration();
         }
 
@@ -36,7 +38,7 @@ namespace FMS.Web.Host.Startup
             // MVC
             services.AddMvc(
                 options => options.Filters.Add(new CorsAuthorizationFilterFactory(_defaultCorsPolicyName))
-            ).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            );
 
             IdentityRegistrar.Register(services);
             AuthConfigurer.Configure(services, _appConfiguration);
@@ -97,6 +99,7 @@ namespace FMS.Web.Host.Startup
             app.UseAuthentication();
 
             app.UseAbpRequestLocalization();
+
 
             app.UseSignalR(routes =>
             {

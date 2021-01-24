@@ -2,6 +2,7 @@
 using Abp.Domain.Repositories;
 using Abp.EntityFrameworkCore;
 using Abp.EntityFrameworkCore.Repositories;
+using System.Threading.Tasks;
 
 namespace FMS.EntityFrameworkCore.Repositories
 {
@@ -19,6 +20,10 @@ namespace FMS.EntityFrameworkCore.Repositories
         }
 
         // Add your common methods for all repositories
+        public override Task DeleteAsync(TPrimaryKey id)
+        {
+            return base.DeleteAsync(id);
+        }
     }
 
     /// <summary>

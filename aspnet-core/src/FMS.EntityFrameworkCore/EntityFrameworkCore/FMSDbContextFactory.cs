@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using FMS.Configuration;
 using FMS.Web;
+using System;
 
 namespace FMS.EntityFrameworkCore
 {
@@ -12,8 +13,12 @@ namespace FMS.EntityFrameworkCore
         public FMSDbContext CreateDbContext(string[] args)
         {
             var builder = new DbContextOptionsBuilder<FMSDbContext>();
-            var configuration = AppConfigurations.Get(WebContentDirectoryFinder.CalculateContentRootFolder());
+            string env = null;
 
+            env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
+            Console.WriteLine($"Environment : {env}");
+            var configuration = AppConfigurations.Get(WebContentDirectoryFinder.CalculateContentRootFolder(), env);
+            Console.WriteLine($"Connection : {configuration.GetConnectionString(FMSConsts.ConnectionStringName)}");
             FMSDbContextConfigurer.Configure(builder, configuration.GetConnectionString(FMSConsts.ConnectionStringName));
 
             return new FMSDbContext(builder.Options);

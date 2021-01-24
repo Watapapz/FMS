@@ -11,7 +11,7 @@ export class AppConsts {
     };
 
     static readonly localization = {
-        defaultLocalizationSourceName: 'FSM'
+        defaultLocalizationSourceName: 'FMS'
     };
 
     static readonly authorization = {

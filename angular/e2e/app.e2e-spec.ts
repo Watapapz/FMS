@@ -1,10 +1,10 @@
-import { FSMTemplatePage } from './app.po';
+import { FMSTemplatePage } from './app.po';
 
-describe('FSM App', function() {
-  let page: FSMTemplatePage;
+describe('FMS App', function() {
+  let page: FMSTemplatePage;
 
   beforeEach(() => {
-    page = new FSMTemplatePage();
+    page = new FMSTemplatePage();
   });
 
   it('should display message saying app works', () => {

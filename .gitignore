@@ -4,6 +4,6 @@
 .vs/
 obj/
 bin/
-aspnet-core/src/FSM.Web.Host/App_Data/Logs/
-aspnet-core/src/FSM.Web.Mvc/App_Data/Logs/
-aspnet-core/src/FSM.Migrator/Logs/Logs.txt
+aspnet-core/src/FMS.Web.Host/App_Data/Logs/
+aspnet-core/src/FMS.Web.Mvc/App_Data/Logs/
+aspnet-core/src/FMS.Migrator/Logs/Logs.txt

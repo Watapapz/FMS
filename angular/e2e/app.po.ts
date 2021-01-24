@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class FSMTemplatePage {
+export class FMSTemplatePage {
   navigateTo() {
     return browser.get('/');
   }

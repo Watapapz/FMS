@@ -9,11 +9,12 @@ using FMS.Core.Currencies;
 
 namespace FMS.EntityFrameworkCore
 {
+
     [AutoRepositoryTypes(
-        typeof(IRepository<>),
-        typeof(IRepository<,>),
-        typeof(FMSRepositoryBase<>),
-        typeof(FMSRepositoryBase<,>)
+    typeof(IRepository<>),
+    typeof(IRepository<,>),
+    typeof(FMSRepositoryBase<>),
+    typeof(FMSRepositoryBase<,>)
     )]
     public class FMSDbContext : AbpZeroDbContext<Tenant, Role, User, FMSDbContext>
     {

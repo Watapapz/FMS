@@ -18,19 +18,13 @@ namespace FMS.EntityFrameworkCore.Seed.Host
 
         public void Create()
         {
-            int? tenantId = null;
-
-            if (FMSConsts.MultiTenancyEnabled == false)
-            {
-                tenantId = MultiTenancyConsts.DefaultTenantId;
-            }
 
             // Emailing
-            AddSettingIfNotExists(EmailSettingNames.DefaultFromAddress, "admin@mydomain.com", tenantId);
-            AddSettingIfNotExists(EmailSettingNames.DefaultFromDisplayName, "mydomain.com mailer", tenantId);
+            AddSettingIfNotExists(EmailSettingNames.DefaultFromAddress, "admin@mydomain.com");
+            AddSettingIfNotExists(EmailSettingNames.DefaultFromDisplayName, "mydomain.com mailer");
 
             // Languages
-            AddSettingIfNotExists(LocalizationSettingNames.DefaultLanguage, "en", tenantId);
+            AddSettingIfNotExists(LocalizationSettingNames.DefaultLanguage, "en");
         }
 
         private void AddSettingIfNotExists(string name, string value, int? tenantId = null)

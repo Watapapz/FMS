@@ -37,7 +37,7 @@ a{cursor: pointer;
     display: inline-block; }
   .ngx-pagination a,
   .ngx-pagination button {
-    color: #0a0a0a; 
+    color: #0a0a0a;
     display: block;
     padding: 0.1875rem 0.625rem;
     border-radius: 0; }
@@ -52,7 +52,7 @@ a{cursor: pointer;
   .ngx-pagination .disabled {
     padding: 0.1875rem 0.625rem;
     color: #cacaca;
-    cursor: default; } 
+    cursor: default; }
     .ngx-pagination .disabled:hover {
       background: transparent; }
   .ngx-pagination .ellipsis::after {
@@ -61,7 +61,7 @@ a{cursor: pointer;
     color: #0a0a0a; }
 
 .ngx-pagination .pagination-previous a::before,
-.ngx-pagination .pagination-previous.disabled::before { 
+.ngx-pagination .pagination-previous.disabled::before {
   content: '«';
   display: inline-block;
   margin-right: 0.5rem; }
@@ -3198,7 +3198,13 @@ section.content {
   -o-transition: all 0.95s;
   -webkit-transition: all 0.95s;
   transition: all 0.95s; }
-
+  .info-box.hover-zoom-effect .action {
+    overflow: hidden; }
+    .info-box.hover-zoom-effect .action i {
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
 .info-box.hover-expand-effect:hover:after {
   width: 100%; }
 

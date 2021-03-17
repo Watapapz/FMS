@@ -1,0 +1,62 @@
+<div [@routerTransition]>
+    <div class="block-header">
+        <h2>List Of Bank Accounts</h2>
+        <br>
+    </div>
+    <div class="row clearfix">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="card">
+                <div class="header">
+                    <div class="row clearfix">
+                        <div class="col-xs-12 col-sm-6">
+                            <h2>Bank Accounts</h2>
+                        </div>
+                        <!-- <div class="col-xs-12 col-sm-6 align-right">
+                            <div class="switch panel-switch-btn">
+                                <span class="m-r-10 font-12">REAL TIME</span>
+                                <label>OFF<input type="checkbox" id="realtime" checked><span class="lever switch-col-cyan"></span>ON</label>
+                            </div>
+                        </div> -->
+                    </div>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                <li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body row">
+                    <div *ngFor="let bankAccount of bankAccounts" class="col-sm-4">
+                        <div [ngClass]="bankAccount? changeColor(bankAccount.bank): 'bg-pink'" class="info-box hover-expand-effect">
+                            <div class="icon">
+                                <i class="material-icons">playlist_add_check</i>
+                            </div>
+                            <div class="content">
+                                <div class="text">{{ bankAccount.bank.abb + " - " + bankAccount.accountNo}}</div>
+                                <div class="number">{{ bankAccount.balance }}</div>
+                            </div>
+                            <div class="action2">
+                                <button mat-icon-button (click)="removeAccount(bankAccount.id)">
+                                    <mat-icon>close</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 align-right">
+                        <div class="example-button-container">
+                          <button mat-mini-fab (click)="createAccount()" aria-label="Add Bank Account">
+                            <mat-icon>add_circle_outline</mat-icon>
+                          </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

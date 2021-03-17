@@ -11,10 +11,10 @@ namespace FMS.EntityFrameworkCore.Repositories
     /// </summary>
     /// <typeparam name="TEntity">Entity type</typeparam>
     /// <typeparam name="TPrimaryKey">Primary key type of the entity</typeparam>
-    public abstract class FMSRepositoryBase<TEntity, TPrimaryKey> : EfCoreRepositoryBase<FMSDbContext, TEntity, TPrimaryKey>
+    public class FMSRepositoryBase<TEntity, TPrimaryKey> : EfCoreRepositoryBase<FMSDbContext, TEntity, TPrimaryKey>
         where TEntity : class, IEntity<TPrimaryKey>
     {
-        protected FMSRepositoryBase(IDbContextProvider<FMSDbContext> dbContextProvider)
+        public FMSRepositoryBase(IDbContextProvider<FMSDbContext> dbContextProvider)
             : base(dbContextProvider)
         {
         }
@@ -31,10 +31,10 @@ namespace FMS.EntityFrameworkCore.Repositories
     /// This is a shortcut of <see cref="FMSRepositoryBase{TEntity,TPrimaryKey}"/> for <see cref="int"/> primary key.
     /// </summary>
     /// <typeparam name="TEntity">Entity type</typeparam>
-    public abstract class FMSRepositoryBase<TEntity> : FMSRepositoryBase<TEntity, int>, IRepository<TEntity>
+    public class FMSRepositoryBase<TEntity> : FMSRepositoryBase<TEntity, int>, IRepository<TEntity>
         where TEntity : class, IEntity<int>
     {
-        protected FMSRepositoryBase(IDbContextProvider<FMSDbContext> dbContextProvider)
+        public FMSRepositoryBase(IDbContextProvider<FMSDbContext> dbContextProvider)
             : base(dbContextProvider)
         {
         }
